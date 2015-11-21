@@ -1,0 +1,15 @@
+<div ng-show="showDetails" class="absolute" class="mythumb" data-offset-top="530"  data-spy="affix">
+  <div>
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" option="options">
+      <ui-gmap-markers models="markerList" fit="true" coords="'self'" icon="'icon'" click="onClick">
+        <ui-gmap-windows show="show">
+          <div ng-non-bindable>
+            <p><a href={{url}} target="_blank">{{name}}</a></p>
+            <img src={{ratings}} />
+            <p>{{reviewCount}} reviews</p>
+            </div>
+          </ui-gmap-windows>
+        </ui-gmap-markers>
+      </ui-gmap-google-map>
+    </div>
+  </div>

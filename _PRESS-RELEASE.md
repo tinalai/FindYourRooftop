@@ -18,27 +18,36 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  	-Girl Love Rooftops
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  	-The market is all individuals 21 and up who want to find the nearest rooftop bars for a given location.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  	-The website shows a user the most popular rooftop bars closest to a given location. The app allows users to rate and review 'rooftops' and submit new 'rooftop' listings.
 
 ## Problem ##
   > Describe the problem your product solves.
+  	-Everyone loves rooftop bars and this website will establish a community to bring people together over something they love.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  	-The product streamlines the process of finding a cool rooftop bar.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+	-"Our customers don't just go out on the weekends, they go outside."
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  	-"Simply log on to our website, enter your location, and find your rooftop."
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  	-"I spend way too much time indoors all week. I want to spend my nights out on a rooftop."
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  	-"Check out our website and go find a roof!"
