@@ -44,4 +44,4 @@ module.exports.downloadMenu = function(req, res, next) {
         }
     });
 
-}
+};

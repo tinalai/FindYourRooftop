@@ -13,10 +13,10 @@ exports.validateLogin = function(req, res) {
 
 	console.log('finding user: ' + em);
 	query.findUser(req, res, user, loginCallback);
-}
+};
 
 var loginCallback =	function(req, res, user, foundUser) {
-		console.log('(loginCB) user was found in db username is ' + foundUser.email)
+		console.log('(loginCB) user was found in db username is ' + foundUser.email);
 		console.log('(loginCB) user password ' + foundUser.password);
 		// test given password against saved
 		if (foundUser.password === user.password) {
@@ -27,7 +27,7 @@ var loginCallback =	function(req, res, user, foundUser) {
 			console.log('Error, incorrect password');
 			res.send('wrong password');
 		}
-}
+};
 
 function signupCallback(req, res, user) {
 	if (user === null) {
@@ -36,7 +36,7 @@ function signupCallback(req, res, user) {
 		console.log('(signupCB) new user is ' + user.email);
 		createSession(req, res, user);
 	}
-};
+}
 
 exports.processSignup = function(req, res, next) {
 	var em = req.body.email;
@@ -56,8 +56,8 @@ function createSession (req, res, newUser) {
     req.session.user = newUser;
     console.log(req.session.user);
     res.send("session created");
-  });	
-};
+  });
+}
 
 exports.checkUser = function(req, res, next){
   if (!isLoggedIn(req)) {
@@ -70,4 +70,3 @@ exports.checkUser = function(req, res, next){
 var isLoggedIn = function(req) {
   return req.session ? !!req.session.user : false;
 };
-

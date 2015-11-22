@@ -36,8 +36,8 @@ angular.module('register', [])
 		.catch(function(data, status) {
 			console.error('there was an error logging in');
 			console.log(response.status, response.data);
-		})
-	}
+		});
+	};
 // then handleresponse(response)
 	$scope.submitSignup = function(email, pass) {
 		$scope.email = '';
@@ -51,7 +51,7 @@ angular.module('register', [])
       }
 		}).then(function(response) {
 			if (response.data === 'session created') {
-				console.log('redirecting to main')
+				console.log('redirecting to main');
 				$location.path("/");
 			} else if (response.data === 'email exists') {
 				console.log('email is taken');
@@ -60,8 +60,7 @@ angular.module('register', [])
 		}, function(response) {
 			console.log('there was an error with signup');
 			$location.path("/signup");
-		})
-	}
-	
-})
+		});
+	};
 
+});
