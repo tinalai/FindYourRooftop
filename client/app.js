@@ -1,4 +1,4 @@
-angular.module('WGLR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.router', 'register'])
+angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.router', 'register'])
 
 .config(function(uiGmapGoogleMapApiProvider , $stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/main');
@@ -12,7 +12,7 @@ angular.module('WGLR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.ro
       url: '/signup',
       controller: 'formController',
       templateUrl: './client/register/register.html'
-    })
+    });
     //NEED TO INSERT GOOGLE MAPS API
   uiGmapGoogleMapApiProvider.configure({
     key: '',
@@ -32,7 +32,7 @@ angular.module('WGLR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.ro
   $scope.menu = [];
 
   $scope.findMenu = function(name, postal) {
-    console.log(name, postal)
+    console.log(name, postal);
     return $http({
       method: 'POST',
       url: '/menu',
@@ -43,20 +43,20 @@ angular.module('WGLR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.ro
     }).then(function(res) {
       console.log(res.data);
       $scope.menu = res.data;
-    })
-  }
+    });
+  };
   console.log('test');
 
   $scope.sendZipCode  = function(searchParam) {
     // var params = '{enter query}';
-    var integers = ['0','1','2','3','4','5','6','7','8','9']
+    var integers = ['0','1','2','3','4','5','6','7','8','9'];
     var data;
     if(integers.indexOf(searchParam[0]) >= 0) {
-    	data = {zipCode: searchParam}
+    	data = {zipCode: searchParam};
     } else {
-    	data = {city: searchParam}
+    	data = {city: searchParam};
     }
-    console.log(data)
+    console.log(data);
     return $http({
       method: 'POST',
       url: '/list',
@@ -121,13 +121,13 @@ angular.module('WGLR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.ro
     .then(function(res) {
       console.log(res.data);
       $location.path('/signup');
-    })
-  }
+    });
+  };
 
 
   $scope.mapZoom = function(index) {
     $scope.map = {center: { latitude: $scope.list[index].location.coordinate.latitude, longitude: $scope.list[index].location.coordinate.longitude }, zoom: 17 };
-  }
+  };
 })
 
 .controller('AccordionDemoCtrl', function ($scope) {
@@ -191,7 +191,4 @@ angular.module('WGLR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.ro
       this.groups.splice(index, 1);
     }
   };
-}])
-
-
-
+}]);

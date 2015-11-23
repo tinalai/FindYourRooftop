@@ -31,8 +31,8 @@ function queryDB(req, res, next, searchParam, queryParam) {
 	.then(function() {
 		console.log('NEXT');
 		next();
-	})
-};
+	});
+}
 
 // user queries
 exports.addUser = function(req, res, user, callback) {
@@ -45,7 +45,7 @@ exports.addUser = function(req, res, user, callback) {
 	// 			var dbEmail = snapshot.val();
 	// 			console.log('(addUser) checking ' + dbEmail);
 	// 			if (dbEmail === user.email) {
-	// 				console.log('(addUser) user email already exists'); 
+	// 				console.log('(addUser) user email already exists');
 	// 				found = true;
 	// 				callback(req, res, null);
 	// 			} else {
@@ -63,9 +63,9 @@ exports.addUser = function(req, res, user, callback) {
 	// 		console.log('(addUser) adding user');
 			usersRef.push(user);
 			callback(req, res, user);
-	// 	} 
+	// 	}
 	// 	if (found) {
-	// 		console.log('(addUser) user email already exists'); 
+	// 		console.log('(addUser) user email already exists');
 	// 		res.send('email exists');
 	// 	}
 	// })
@@ -92,11 +92,11 @@ exports.findUser = function(req, res, user, callback) {
 			console.log('the user is null');
 			res.send('user not found');
 		}
-	})
+	});
 };
 
 
-// firebase's user creation method, 
+// firebase's user creation method,
 	// fireproof.createUser({
 	// 	email: req.body.email,
 	// 	password: req.body.password
@@ -120,4 +120,3 @@ exports.findUser = function(req, res, user, callback) {
 	// 	next();
 	// })
 	// }
-
