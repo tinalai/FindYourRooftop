@@ -45,7 +45,6 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
       $scope.menu = res.data;
     });
   };
-  console.log('test');
 
   $scope.sendZipCode  = function(searchParam) {
     // var params = '{enter query}';

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="FYR">
 <head>
-  <title>Find Your Rooftop</title>
+
+  <title>FYR</title>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
@@ -118,8 +120,8 @@
         <ui-gmap-markers models="markerList" fit="true" coords="'self'" icon="'icon'" click="onClick">
           <ui-gmap-windows show="show">
             <div ng-non-bindable>
-              <p><a href={{url}} target="_blank">{{name}}</a></p>
-              <img src={{ratings}} />
+              <p><a ng-src={{url}} target="_blank">{{name}}</a></p>
+              <img ng-src={{ratings}} />
               <p>{{reviewCount}} reviews</p>
             </div>
           </ui-gmap-windows>
@@ -138,13 +140,13 @@
 
      <uib-accordion-heading >
        {{ bar.name }}
-       <img src='{{ bar.rating_img_url}}'>
+       <img ng-src='{{ bar.rating_img_url}}'>
      </uib-accordion-heading>
 
     <div class="row">
 
       <div class="">
-         <img src="{{bar.image_url}}" >
+         <img ng-src="{{bar.image_url}}" >
       </div >
       <div class="">
         <p class="addressFont ">{{bar.location.address[0]}} <br>
@@ -169,7 +171,7 @@
 <div id="footer">
   <div class="container">
     <p class="muted credit text-center" >
-      -FYR Los Angeles 604 Arizona dr Santa Monica-
+      -FYR Los Angeles 604 Arizona Dr Santa Monica, CA-
     </p>
 
   </div>
