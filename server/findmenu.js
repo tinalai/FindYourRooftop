@@ -23,7 +23,7 @@ module.exports.downloadMenu = function(req, res, next) {
         },
         //NEED TO INSERT LOCUAPI KEY
         body: JSON.stringify({
-          "api_key" : "",
+          "api_key" : "b17e2d94d4f55f14af2a48ee9583f566dbc99b6f",
           "fields" : [ "name", "location", "menus", "menu_url", "website_url" ],
           "venue_queries" : [
             {
