@@ -15,7 +15,7 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
     });
     //NEED TO INSERT GOOGLE MAPS API
   uiGmapGoogleMapApiProvider.configure({
-    key: '',
+    key: 'AIzaSyC5OMnpklycsXCq4WzoasPJ11lQ4279ZIg',
     v: '3.20', //defaults to latest 3.X anyhow
     libraries: 'weather,geometry,visualization'
   });
@@ -46,7 +46,7 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
     });
   };
 
-  $scope.sendZipCode  = function(searchParam) {
+  $scope.sendZipCode = sendZipCode = function(searchParam) {
     // var params = '{enter query}';
     var integers = ['0','1','2','3','4','5','6','7','8','9'];
     var data;
@@ -190,4 +190,11 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
       this.groups.splice(index, 1);
     }
   };
+
+//grab user ip, and convert to location via ipinfo's public API
+  $.get("http://ipinfo.io", function(response) {
+    console.log(response);
+    sendZipCode(response.postal);
+    // showDetails = true;
+}, "jsonp");
 }]);
