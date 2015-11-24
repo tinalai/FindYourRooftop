@@ -3,17 +3,17 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
 .config(function(uiGmapGoogleMapApiProvider , $stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/main');
   $stateProvider
-    .state('main', {
-      url: '/',
-      controller: 'appController',
-      templateUrl: 'index.html'
-    })
-    .state('signup', {
-      url: '/signup',
-      controller: 'formController',
-      templateUrl: './client/register/register.html'
-    });
-    //NEED TO INSERT GOOGLE MAPS API
+  .state('main', {
+    url: '/',
+    controller: 'appController',
+    templateUrl: 'index.html'
+  })
+  .state('signup', {
+    url: '/signup',
+    controller: 'formController',
+    templateUrl: './client/register/register.html'
+  });
+  //NEED TO INSERT GOOGLE MAPS API
   uiGmapGoogleMapApiProvider.configure({
     key: 'AIzaSyC5OMnpklycsXCq4WzoasPJ11lQ4279ZIg',
     v: '3.20', //defaults to latest 3.X anyhow
@@ -51,9 +51,9 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
     var integers = ['0','1','2','3','4','5','6','7','8','9'];
     var data;
     if(integers.indexOf(searchParam[0]) >= 0) {
-    	data = {zipCode: searchParam};
+      data = {zipCode: searchParam};
     } else {
-    	data = {city: searchParam};
+      data = {city: searchParam};
     }
     console.log(data);
     return $http({
@@ -111,6 +111,14 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
     });
   };
 
+  //grab user ip, and convert to location via ipinfo's public API
+  $scope.geoLocate = function() {
+    $.get("http://ipinfo.io", function(response) {
+      console.log(response);
+      sendZipCode(response.city);
+      showDetails = true;
+    }, "jsonp");
+  };
 
   $scope.logout = function() {
     $http({
@@ -163,7 +171,7 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
   // Ensure that all the groups in this accordion are closed, unless close-others explicitly says not to
   this.closeOthers = function(openGroup) {
     var closeOthers = angular.isDefined($attrs.closeOthers) ?
-      $scope.$eval($attrs.closeOthers) : accordionConfig.closeOthers;
+    $scope.$eval($attrs.closeOthers) : accordionConfig.closeOthers;
     if (closeOthers) {
       angular.forEach(this.groups, function(group) {
         if (group !== openGroup) {
@@ -191,10 +199,5 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
     }
   };
 
-//grab user ip, and convert to location via ipinfo's public API
-  $.get("http://ipinfo.io", function(response) {
-    console.log(response);
-    sendZipCode(response.postal);
-    // showDetails = true;
-}, "jsonp");
+
 }]);
