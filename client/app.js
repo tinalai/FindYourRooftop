@@ -64,6 +64,7 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
       },
       data: data
     }).then(function(res) {
+      console.log(res.data);
       $scope.list = res.data;
 
       //---Google Maps start---
