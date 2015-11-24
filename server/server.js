@@ -82,5 +82,6 @@ app.use('/user', userRouter);
 app.use('/menu', menuRouter);
 
 app.listen(3000);
+console.log("App now listening at http://localhost:3000/, booyah!");
 
 module.exports = app;
