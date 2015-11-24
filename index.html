@@ -1,121 +1,125 @@
 <!DOCTYPE html>
 <html ng-app="FYR">
 <head>
-
   <title>FYR</title>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
-    <link rel="stylesheet" href="bootstrap-andrew-custom.css" >
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="stylish-portfolio.css">
-    <script src="bower_components/lodash/lodash.min.js"></script>
-    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.14.3.js"></script>
-
-    <script src="client/register/register.js"></script>
-    <script src="client/app.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+  <link rel="stylesheet" type="text/css" href="client/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="client/styles/stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="client/styles/stylish-portfolio.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,700,800' rel='stylesheet' type='text/css'>
+  <script src="bower_components/lodash/lodash.min.js"></script>
+  <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-0.14.3.js"></script>
+  <script src="client/register/register.js"></script>
+  <script src="client/app.js"></script>
 </head>
 <body ng-controller="appController" class="body">
-
   <div ui-view>
 
-
-<!-- login and signup buttons -->
-  <div class="login">
-    <button type="button" class="btn btn-primary"  ui-sref="signup">
-      Login
-    </button>
-  </div>
-  <div class="login">
-    <button type="button" class="btn btn-primary" ng-click="logout()">
-      Logout
-    </button>
-  </div>
-
-
-<!-- jumbotron banner image -->
-  <div class="bg"> </div>
-
-  <div class="jumbotron" >
-    <!-- <p class="lead"> -->
-  </div>
-
-  <!-- input search form and search button -->
-  <div class="hero__content-footer hide-sm">
-    <div class="container-fluid" >
-
-      <div class="col-lg-12  text-center" >
-          <form>
-            <div>
-              <input type="text" class="form-control input-lg text-center" placeholder="type in a city or zipcode" ng-model="zipCode">
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="sendZipCode(zipCode); showDetails = true" > Get me to a roof </button>
-          </form>
-          <br>
-      </div>
-      <br>
-
+  <header class="r-header" id="header">
+    <div class="header-wrapper">
+      <nav class="nav-main">
+        <p class="logo">
+          FYR
+        </p>
+        <!-- login and signup buttons -->
+        <div class="login">
+          <button type="button" class="btn btn-primary" ui-sref="signup">
+            Log in
+          </button>
+          <button type="button" class="btn btn-primary" id="logout" ng-click="logout()">
+            Logout
+          </button>
+        </div>
+      </nav>
     </div>
+  </header>
+
+  <div class="hero-container">
+
+    <!-- jumbotron banner image -->
+    <div class="jumbotron">
+    </div>
+    <header class="hero-header">
+      <div class="inner-header">
+        <h1 class="hero-title">Find Your Rooftop</h1>
+        <h2 class="hero-subtitle">discover rooftop bars around you with the find your rooftop app</h2>
+      </div>
+    </header>
+
+    <!-- input search form and search button -->
+    <div class="hero__content-footer hide-sm">
+      <form id="search">
+        <input type="text" class="input-lg text-center" placeholder="Enter your location" ng-model="zipCode">
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="sendZipCode(zipCode); showDetails = true">Get me to a roof</button>
+      </form>
+    </div>
+
   </div>
 
 
+  <!-- Row of select rooftop bars -->
+  <section id="select-rooftops">
+    <div class="sandwich-item">
+      <div class="row">
 
-    <div class="row">
-        <!-- <h2>Lily</h2> -->
-        <div class="col-xs-12 col-sm-4 col-md-4">
-        <div class="grid" >
-          <figure class="effect-sadie">
-            <img src="https://c2.staticflickr.com/6/5693/23090037892_13b666e6f3.jpg" alt="img02"/>
-            <figcaption>
-              <h2>W <span>Rooftop</span></h2>
-              <p>Rated best <br>rooftop pool in LA</p>
-              <a href="#">View more</a>
-            </figcaption>
-          </figure>
-        </div>
-        </div>
+        <h1 class="sandwich-title">Select rooftops</h1>
 
-        <div class="col-xs-12 col-sm-4 col-md-4">
-        <div class="grid" >
-          <figure class="effect-sadie">
-            <img src="http://www.shannonevents.com/blog/wp-content/uploads/2011/08/VIP-Main-Photo-1024x682.jpg" alt="img02"/>
-            <figcaption>
-              <h2>Rooftop <span>Wilshire</span></h2>
-              <p> Rated best<br> drinks in la</p>
-              <a href="#">View more</a>
-            </figcaption>
-          </figure>
-        </div>
+        <div class="col-md-4">
+          <div class="grid">
+            <figure class="effect-sadie">
+              <img src="https://c2.staticflickr.com/6/5693/23090037892_13b666e6f3.jpg" alt="img02"/>
+              <figcaption>
+                <h2>W <span>Rooftop</span></h2>
+                <p>Rated best <br>rooftop pool in LA</p>
+                <a href="#">View more</a>
+              </figcaption>
+            </figure>
+          </div>
         </div>
 
-        <div class="col-xs-12 col-sm-4 col-md-4">
-        <div class="grid">
-          <figure class="effect-sadie">
-            <img src="http://downtownexaminer.com/news/wp-content/uploads/2013/03/standard.jpg" alt="img02"/>
-            <figcaption>
-              <h2> Standard <span>Hotel</span></h2>
-              <p>Rated Best View of Downtown Los Angeles<br> </p>
-              <a href="#">View more</a>
-            </figcaption>
-          </figure>
+        <div class="col-md-4">
+          <div class="grid" >
+            <figure class="effect-sadie">
+              <img src="http://www.shannonevents.com/blog/wp-content/uploads/2011/08/VIP-Main-Photo-1024x682.jpg" alt="img02"/>
+              <figcaption>
+                <h2>Rooftop <span>Wilshire</span></h2>
+                <p>Rated best<br> drinks in la</p>
+                <a href="#">View more</a>
+              </figcaption>
+            </figure>
+          </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="grid">
+            <figure class="effect-sadie">
+              <img src="http://downtownexaminer.com/news/wp-content/uploads/2013/03/standard.jpg" alt="img02"/>
+              <figcaption>
+                <h2>Standard <span>Hotel</span></h2>
+                <p>Rated Best View of <br>Downtown Los Angeles</p>
+                <a href="#">View more</a>
+              </figcaption>
+            </figure>
+          </div>
         </div>
 
       </div>
+    </div>
+  </section>
 
-  <!-- Google Maps -->
-<div class="row left-buffer">
+  <section class="list-map">
 
-  <div ng-show="showDetails" class="absolute" class="mythumb" data-offset-top="530"  data-spy="affix" class="col-lg-6 col-sm-6">
-    <div>
+  <div class="row left-buffer">
+    <!-- Google Maps -->
+    <div ng-show="showDetails" class="absolute" class="mythumb" >
       <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" option="options">
         <ui-gmap-markers models="markerList" fit="true" coords="'self'" icon="'icon'" click="onClick">
           <ui-gmap-windows show="show">
@@ -128,70 +132,51 @@
         </ui-gmap-markers>
       </ui-gmap-google-map>
     </div>
+    <!--Google Maps End -->
+
+    <uib-accordion close-others="true" class=" col-md-6 col-sm-6 col-xs-6">
+      <uib-accordion-group ng-repeat="bar in list track by $index" class="text-center" ng-click="mapZoom($index)">
+
+        <uib-accordion-heading>
+          {{ bar.name }}
+          <img ng-src='{{ bar.rating_img_url}}'>
+        </uib-accordion-heading>
+
+        <div class="row">
+          <div class="">
+            <img ng-src="{{bar.image_url}}" >
+          </div >
+          <div class="">
+            <p class="addressFont">
+              {{bar.location.address[0]}}<br>
+              {{bar.location.city}},
+              {{bar.location.state_code}}
+              {{bar.location.postal_code}}<br>
+              {{bar.display_phone}}
+            </p>
+            <button type="button" class="btn btn-sm btn-warning" ng-if="!bar.showLink" ng-click="findMenu(bar.name, bar.location.postal_code); bar.showLink=true">Menu</button>
+            <!--  <div ng-if='bar.showLink'> -->
+            <a ng-if='bar.showLink' class="btn btn-sm btn-warning" href="{{menu.venues[0].website_url}}" target="popup" onclick="window.open(menu.venues[0].website_url,'name','width=600,height=400')">Menu</a>
+          </div>
+        </div>
+      </uib-accordion-group>
+    </uib-accordion>
   </div>
-  <!--Google Maps End -->
-  <div class="clearfix visible-xs-block"></div>
 
-  <uib-accordion close-others="true" class=" col-md-6 col-sm-6 col-xs-6" >
+  </section>
 
-
-    <uib-accordion-group ng-repeat="bar in list track by $index" class="text-center" ng-click="mapZoom($index)">
-
-
-     <uib-accordion-heading >
-       {{ bar.name }}
-       <img ng-src='{{ bar.rating_img_url}}'>
-     </uib-accordion-heading>
-
-    <div class="row">
-
-      <div class="">
-         <img ng-src="{{bar.image_url}}" >
-      </div >
-      <div class="">
-        <p class="addressFont ">{{bar.location.address[0]}} <br>
-        {{bar.location.city}},
-        {{bar.location.state_code}}
-        {{bar.location.postal_code}} <br>
-        {{bar.display_phone}}
-        </p>
-         <button type="button" class="btn btn-sm btn-warning" ng-if="!bar.showLink"  ng-click="findMenu(bar.name, bar.location.postal_code); bar.showLink=true" >Menu</button>
-      <!--  <div ng-if='bar.showLink'> -->
-         <a ng-if='bar.showLink' class="btn btn-sm btn-warning" href="{{menu.venues[0].website_url}}" target="popup" onclick="window.open(menu.venues[0].website_url,'name','width=600,height=400')">Menu</a>
-
-      </div>
-
+  <footer id="footer">
+    <div>
+      <p class="address">
+        604 Arizona Ave. Santa Monica, CA 90401
+      </p>
+      <p>
+        Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by Possums & Koalas
+      </p>
     </div>
-
-    </uib-accordion-group>
-
-  </uib-accordion>
-</div>
-
-<div id="footer">
-  <div class="container">
-    <p class="muted credit text-center" >
-      -FYR Los Angeles 604 Arizona Dr Santa Monica, CA-
-    </p>
+  </footer>
 
   </div>
-</div>
-
-     <script type="text/javascript">
-      var jumboHeight = $('.jumbotron').outerHeight();
-      function parallax(){
-        var scrolled = $(window).scrollTop();
-        $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-      }
-      $(window).scroll(function(e){
-        parallax();
-      });
-     </script>
-
-     </div>
 
 </body>
-
-
-
 </html>

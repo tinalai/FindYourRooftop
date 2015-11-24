@@ -1,4 +1,4 @@
-<div ng-show="showDetails" class="absolute" class="mythumb" data-offset-top="530"  data-spy="affix">
+<div ng-show="showDetails" class="absolute" class="mythumb" >
   <div>
     <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" option="options">
       <ui-gmap-markers models="markerList" fit="true" coords="'self'" icon="'icon'" click="onClick">
@@ -7,9 +7,9 @@
             <p><a href={{url}} target="_blank">{{name}}</a></p>
             <img src={{ratings}} />
             <p>{{reviewCount}} reviews</p>
-            </div>
-          </ui-gmap-windows>
-        </ui-gmap-markers>
-      </ui-gmap-google-map>
-    </div>
+          </div>
+        </ui-gmap-windows>
+      </ui-gmap-markers>
+    </ui-gmap-google-map>
   </div>
+</div>

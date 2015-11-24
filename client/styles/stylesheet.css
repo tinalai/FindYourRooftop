@@ -1,0 +1,365 @@
+.body {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*.bg {
+  background: url('http://www.randomwander.com/wp-content/uploads/2013/07/lebua_state_tower_bangkok.jpg') no-repeat center center;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  width: 100%;
+  height: 700px; same height as jumbotron
+  top:0;
+  left:0;
+  z-index: -1;
+}*/
+
+.r-header {
+  z-index: 8;
+  width: 100%;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.12);
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+}
+.header-wrapper {
+  height: 60px;
+  position: relative;
+}
+.nav-main {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-align: center;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  height: 100%;
+  background: #fff;
+}
+.nav-main .logo {
+  margin: 0;
+  max-width: 110px;
+  padding: 0;
+  font: 800 48px 'open sans';
+  color: #16223D;
+  letter-spacing: .05em;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: 0 0;
+}
+.login {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  padding: 0;
+}
+.login button {
+  font-size: 13px;
+  font-family: 'open sans';
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7F8DC0;
+  transition: color 0.15s;
+  background-color: #fff;
+  border-color: #fff;
+}
+.login button:hover {
+  color: #16223D;
+  background-color: #fff;
+  border-color: #fff;
+}
+#logout {
+  padding-right: 0;
+}
+.hero-container {
+  position: relative;
+  height: 100vh;
+  margin-top: -60px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.hero-container .jumbotron {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  background: url('http://i.imgur.com/3mrtaQf.jpg') no-repeat center center;
+  background-size: cover;
+  margin-bottom: 0;
+}
+.hero-header {
+  height: 40%;
+  margin: 0 auto;
+  padding: 0 0.5em;
+  position: relative;
+  top: 60px;
+  max-width: 900px;
+  color: white;
+}
+.inner-header {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hero-title {
+  font: 800 4.25em 'open sans';
+  letter-spacing: 0.05em;
+}
+.hero-subtitle {
+  font: 700 1.5em 'open sans';
+  letter-spacing: 0.05em;
+}
+.hero__content-footer {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 2.5em;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 250px;
+}
+#search .input-lg {
+  font-size: 13px;
+  font-family: 'open sans';
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  width: 250px;
+  border: none;
+}
+#search .btn-lg {
+  font-size: 13px;
+  font-family: 'open sans';
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: #7F8DC0;
+  border-color: #7F8DC0;
+  opacity: 0.85;
+  color: #fff;
+  transition: background-color 0.15s;
+}
+#search .btn-lg:hover {
+  background-color: #16223D;
+  border-color: #16223D;
+  opacity: 0.85;
+}
+#select-rooftops {
+  height: 550px;
+  background-color: #f5f5f5;
+  position: relative;
+}
+.sandwich-item {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  text-align: center;
+}
+#select-rooftops .row {
+  width: 975px;
+  transform: translate(-50%, -50%);
+}
+.sandwich-title {
+  font: 800 48px 'open sans';
+  color: #16223D;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.sandwich-item .col-md-4 {
+  padding: 0;
+}
+.list-map .row {
+  margin: 0;
+}
+.angular-google-map {
+  margin-right: 170px;
+}
+.angular-google-map-container {
+ float: right;
+ height: 400px;
+ width: 400px;
+ right: 0px;
+}
+#footer {
+  color: #fff;
+  background-color: #16223D;
+  height: 60px;
+  font-size: 13px;
+  font-family: 'open sans';
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+}
+#footer .address {
+  padding-top: 11px;
+}
+#footer p {
+  margin: 0;
+  padding: 0;
+}
+
+
+.likediv {
+  margin-top:100px;
+}
+
+
+/* Common style */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 320px;
+  max-width: 480px;
+  max-height: 360px;
+  width: 48%;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'open sans';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Anchor will cover the whole item by default */
+.grid figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.grid figure h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+
+.grid figure h2 span {
+  font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+  font-family: 'open sans';
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+/* Individual effects */
+
+/*---------------*/
+/* Sadie Effect  */
+/*---------------*/
+
+figure.effect-sadie figcaption::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+  background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+  content: '';
+  opacity: 0;
+  -webkit-transform: translate3d(0,50%,0);
+  transform: translate3d(0,50%,0);
+}
+
+figure.effect-sadie h2 {
+  font-family: 'open sans';
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  -webkit-transition: -webkit-transform 0.35s, color 0.35s;
+  transition: transform 0.35s, color 0.35s;
+  -webkit-transform: translate3d(0,-50%,0);
+  transform: translate3d(0,-50%,0);
+}
+
+figure.effect-sadie figcaption::before,
+figure.effect-sadie p {
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-sadie p {
+  font-family: 'open sans';
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2em;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: translate3d(0,10px,0);
+  transform: translate3d(0,10px,0);
+}
+
+figure.effect-sadie:hover h2 {
+  color: #fff;
+  -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+  transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+}
+
+figure.effect-sadie:hover figcaption::before ,
+figure.effect-sadie:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
