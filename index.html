@@ -20,7 +20,7 @@
   <script src="client/register/register.js"></script>
   <script src="client/app.js"></script>
 </head>
-<body ng-controller="appController" class="body">
+<body ng-controller="appController" class="body" ng-init="geoLocate()">
   <div ui-view>
 
   <header class="r-header" id="header">
@@ -58,7 +58,7 @@
     <div class="hero__content-footer hide-sm">
       <form id="search">
         <input type="text" class="input-lg text-center" placeholder="Enter your location" ng-model="zipCode">
-        <button type="submit" class="btn btn-primary btn-lg" ng-click="sendZipCode(zipCode); showDetails = true">Get me to a roof</button>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="sendZipCode(zipCode)">Get me to a roof</button>
       </form>
     </div>
 
@@ -119,7 +119,7 @@
 
   <div class="row left-buffer">
     <!-- Google Maps -->
-    <div ng-show="showDetails" class="absolute" class="mythumb" >
+    <div class="absolute" class="mythumb" >
       <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" option="options">
         <ui-gmap-markers models="markerList" fit="true" coords="'self'" icon="'icon'" click="onClick">
           <ui-gmap-windows show="show">
