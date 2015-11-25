@@ -53,7 +53,6 @@
   // code below.
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
-      // window.top.location = "http://localhost:3000/";
       statusChangeCallback(response);
     });
   }
@@ -61,10 +60,10 @@
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '192236451116952',
-      cookie     : true,  // enable cookies to allow the server to access
-                          // the session
+      cookie     : true,  // enable cookies to allow the server to access the session
       xfbml      : true,  // parse social plugins on this page
       version    : 'v2.5', // use version 2.5
+      channelUrl : 'http://localhost:3000/'
     });
 
     // Now that we've initialized the JavaScript SDK, we call
@@ -82,10 +81,21 @@
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
-    FB.Event.subscribe('auth.login', function () {
-          window.location = "http://localhost:3000/";
-      });
   };
+
+  function logIn()
+  {
+    FB.login(function(){window.location = "http://localhost:3000/";
+      console.log('LOGIN RAN!');
+    });
+  }
+
+  function logOut()
+  {
+    FB.logout(function(response){window.location = "http://localhost:3000/#/signup";
+      console.log('LOGOUT FUCNTION RAN!');
+    });
+  }
 
   // Load the SDK asynchronously
   (function(d, s, id) {
@@ -117,14 +127,16 @@
         <p class="logo">
           FYR
         </p>
-        <!-- login and signup buttons -->
+
         <div class="login">
-          <button type="button" class="btn btn-primary" ui-sref="signup">
-            Log in
+          <!-- Old class name; should be logout -->
+
+          <!-- <div class="fb-login-button" data-max-rows="1" data-size="large" data-auto-logout-link="true" scope="public_profile,email" onclick="Logout()"></div> -->
+
+          <button type="button" class="btn btn-primary" onclick="javascript:Logout()" id="logout" ng-click="logout()">
+          Logout
           </button>
-          <button type="button" class="btn btn-primary" id="logout" ng-click="logout()">
-            Logout
-          </button>
+
         </div>
       </nav>
     </div>
