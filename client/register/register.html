@@ -1,21 +1,34 @@
 <body ng-controller="formController">
   <header id="top" class="header">
     <div class="text-vertical-center btn btn-dark btn-lg">
-      <h1>Login/Signup</h1>
+      <h1>Login</h1>
       <br>
+
+      <!--
+        Below we include the Login Button social plugin. This button uses
+        the JavaScript SDK to present a graphical Login button that triggers
+        the FB.login() function when clicked.
+      -->
+
+      <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,email" onlogin="checkLoginState();"></div>
+
+      <div id="status">
+      </div>
+
+
       <!-- Login -->
-      <form class="form-signin left">
+      <!-- <form class="form-signin left">
         <h2 class="form-signin-heading">Login</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Username" ng-model="email" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="pass" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="submitLogin(email, pass)">Log in</button>
-      </form>
+      </form> -->
 
 
       <!-- Sign Up -->
-      <form class="form-signin right">
+      <!-- <form class="form-signin right">
         <h2 class="form-signin-heading right">Sign Up</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" ng-model="email2" required autofocus>
@@ -24,7 +37,7 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="submitSignup(email2, pass2)">Sign up</button>
       </form>
     </div>
-    </div>
+    </div> -->
   </header>
   <!-- <section id="about" class="about">
     <div class="container">
