@@ -227,7 +227,7 @@
     </div>
     <!--Google Maps End -->
 
-    <uib-accordion close-others="true" class=" col-md-6 col-sm-6 col-xs-6">
+    <uib-accordion close-others="true" class="rooftop-list col-md-6 col-sm-6 col-xs-6">
       <uib-accordion-group ng-repeat="bar in list track by $index" class="text-center" ng-click="mapZoom($index)">
 
         <uib-accordion-heading>
@@ -235,21 +235,19 @@
           <img ng-src='{{ bar.rating_img_url}}'>
         </uib-accordion-heading>
 
-        <div class="row">
-          <div class="">
+        <div class="row rooftop-info-container">
+          <div class="rooftop-image">
             <img ng-src="{{bar.image_url}}" >
           </div >
-          <div class="">
-            <p class="addressFont">
-              {{bar.location.address[0]}}<br>
-              {{bar.location.city}},
-              {{bar.location.state_code}}
-              {{bar.location.postal_code}}<br>
-              {{bar.display_phone}}
-            </p>
-            <button type="button" class="btn btn-sm btn-warning" ng-if="!bar.showLink" ng-click="findMenu(bar.name, bar.location.postal_code); bar.showLink=true">Menu</button>
+          <div class="info-plus-btn">
+            <div class="rooftop-info">
+              <p>{{bar.location.address[0]}}</p>
+              <p>{{bar.location.city}}, {{bar.location.state_code}} {{bar.location.postal_code}}</p>
+              <p>{{bar.display_phone}}</p>
+            </div>
+            <button type="button" class="btn btn-sm btn-menu" ng-if="!bar.showLink" ng-click="findMenu(bar.name, bar.location.postal_code); bar.showLink=true">Menu</button>
             <!--  <div ng-if='bar.showLink'> -->
-            <a ng-if='bar.showLink' class="btn btn-sm btn-warning" href="{{menu.venues[0].website_url}}" target="popup" onclick="window.open(menu.venues[0].website_url,'name','width=600,height=400')">Menu</a>
+            <a ng-if='bar.showLink' class="btn btn-sm btn-menu" href="{{menu.venues[0].website_url}}" target="popup" onclick="window.open(menu.venues[0].website_url,'name','width=600,height=400')">Menu</a>
           </div>
         </div>
       </uib-accordion-group>

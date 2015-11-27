@@ -194,6 +194,50 @@
  width: 400px;
  right: 0px;
 }
+.rooftop-list {
+  font-size: 13px;
+  font-family: 'open sans';
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #16223D;
+  -webkit-font-smoothing: antialiased;
+}
+.rooftop-list h4 {
+  font-family: 'open sans';
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #16223D;
+}
+.accordion-toggle:hover {
+  text-decoration: none;
+}
+.rooftop-info-container {
+  display: flex;
+}
+.rooftop-image {
+  width: 40%;
+}
+.info-plus-btn {
+  width: 60%;
+}
+.rooftop-info {
+  padding-bottom: 5px;
+}
+.rooftop-info p {
+  margin: 0;
+  padding: 0;
+}
+.btn-menu {
+  background-color: #7F8DC0;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'open sans';
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 #footer {
   color: #fff;
   background-color: #16223D;
