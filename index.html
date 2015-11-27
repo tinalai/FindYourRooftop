@@ -44,7 +44,7 @@
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+        'into Facebook';
     }
   }
 
@@ -93,7 +93,7 @@
   function logOut()
   {
     FB.logout(function(response){window.location = "http://localhost:3000/#/signup";
-      console.log('LOGOUT FUCNTION RAN!');
+      console.log('LOGOUT FUNCTION RAN!');
     });
   }
 
@@ -127,16 +127,9 @@
         <p class="logo">
           FYR
         </p>
-
-        <div class="login">
-          <!-- Old class name; should be logout -->
-
-          <!-- <div class="fb-login-button" data-max-rows="1" data-size="large" data-auto-logout-link="true" scope="public_profile,email" onclick="Logout()"></div> -->
-
-          <button type="button" class="btn btn-primary" onclick="javascript:Logout()" id="logout" ng-click="logout()">
-          Logout
-          </button>
-
+        <div class="logout">
+          <p id="welcome"></p>
+          <button type="button" class="btn btn-primary" onclick="javascript:Logout()" id="logout" ng-click="logout()">Logout</button>
         </div>
       </nav>
     </div>
