@@ -1,19 +1,53 @@
 <body ng-controller="formController">
-  <header id="top" class="header">
-    <div class="text-vertical-center btn btn-dark btn-lg">
-      <h1>Login</h1>
-      <br>
+  <div class="login-container">
 
-      <!--
-        Below we include the Login Button social plugin. This button uses
-        the JavaScript SDK to present a graphical Login button that triggers
-        the FB.login() function when clicked.
-      -->
-      <div class="fb-login-button" data-max-rows="1" data-size="xlarge"   data-auto-logout-link="true" scope="public_profile,email" onlogin="logIn()"></div>
-      <br><br>
-      <div id="status">
+    <header class="r-header" id="header">
+      <div class="header-wrapper">
+        <nav class="nav-main">
+          <p class="logo">
+            FYR
+          </p>
+          <div class="title-holder">
+            <p id="title">
+              Find your rooftop
+            </p>
+          </div>
+        </nav>
       </div>
+    </header>
 
-    </div>
-  </header>
+    <main class="wrapper" id="wrapper">
+      <div id="content">
+        <section class="r-section-wrapper">
+          <div class="form-wrapper">
+
+            <h2 class="form-legend">Log In With Facebook</h2>
+            <div></div>
+
+            <!--
+            Below we include the Login Button social plugin. This button uses
+            the JavaScript SDK to present a graphical Login button that triggers
+            the FB.login() function when clicked.
+            -->
+            <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-auto-logout-link="true" scope="public_profile,email" onlogin="logIn()"></div>
+
+            <div id="status"></div>
+
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div>
+        <p class="address">
+          604 Arizona Ave. Santa Monica, CA 90401
+        </p>
+        <p>
+          Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by Possums & Koalas
+        </p>
+      </div>
+    </footer>
+
+  </div>
 </body>
