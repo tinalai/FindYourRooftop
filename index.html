@@ -92,8 +92,9 @@
 
   function logOut()
   {
-    FB.logout(function(response){window.location = "http://find-your-rooftop.herokuapp.com/#/signup";
+    FB.logout(function(response){window.location = "https://find-your-rooftop.herokuapp.com/#/signup";
       console.log('LOGOUT FUNCTION RAN!');
+      location.reload();
     });
   }
 
