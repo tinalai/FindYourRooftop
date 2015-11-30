@@ -1,4 +1,7 @@
 node_modules/
+bower_components/
+client/dependencies.css
+client/dependencies.js
 *.log
 
 build/
