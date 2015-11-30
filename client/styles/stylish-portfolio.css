@@ -31,6 +31,8 @@
   position: relative;
   -webkit-box-flex: 1;
   flex: 1 0 auto;
+  align-items: center;
+  text-align: center;
 }
 .r-section-wrapper {
   padding: 40px 23px 30px;
@@ -56,6 +58,7 @@
   align-items: center;
   font-size: 22px;
   font-weight: 700;
+  justify-content: center;
 }
 #status {
   font-size: 13px;
