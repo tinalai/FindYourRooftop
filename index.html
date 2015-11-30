@@ -85,14 +85,14 @@
 
   function logIn()
   {
-    FB.login(function(){window.location = "http://localhost:3000/";
+    FB.login(function(){window.location = "http://find-your-rooftop.herokuapp.com/";
       console.log('LOGIN RAN!');
     });
   }
 
   function logOut()
   {
-    FB.logout(function(response){window.location = "http://localhost:3000/#/signup";
+    FB.logout(function(response){window.location = "http://find-your-rooftop.herokuapp.com/#/signup";
       console.log('LOGOUT FUNCTION RAN!');
     });
   }
