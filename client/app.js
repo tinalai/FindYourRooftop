@@ -114,7 +114,7 @@ angular.module('FYR', ['ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps', 'ui.rou
 
   //grab user ip, and convert to location via ipinfo's public API
   $scope.geoLocate = function() {
-    $.get("https://ipinfo.io", function(response) {
+    $.get("http://ipinfo.io", function(response) {
       console.log(response);
       sendZipCode(response.city);
       showDetails = true;
