@@ -9,7 +9,7 @@ var mid = require('./middleware.js');
 var session = require('express-session');
 var http = require('http');
 var menu = require('./findmenu.js');
-
+var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -81,7 +81,7 @@ app.use('/list', listRouter);
 app.use('/user', userRouter);
 app.use('/menu', menuRouter);
 
-app.listen(3000);
-console.log("App now listening at http://localhost:3000/, booyah!");
+app.listen(port);
+console.log("App now listening at " + port + ", booyah!");
 
 module.exports = app;
